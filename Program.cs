@@ -18,7 +18,7 @@ namespace esercizio2
             while(!finito)
             {
                 Console.WriteLine("Sceglirer l'operazione da eseguire");
-                Console.WriteLine("0-somma 1-prodotto 2-divisione 3-sottrazione 4-quadrato 5-media 9-esci dal programma");
+                Console.WriteLine("0-somma 1-prodotto 2-divisione 3-sottrazione 4-potenza 5-media 9-esci dal programma");
                 int iChoise = Convert.ToInt32(Console.ReadLine());
                 double[] results;
             
@@ -73,16 +73,20 @@ namespace esercizio2
                 else if (iChoise == 4)
                 {
                     results = new double[1];
-                    Console.WriteLine("inserisci numero:");
+                    Console.WriteLine("Inserisci un numero");
                     results[0] = Convert.ToDouble(Console.ReadLine());
 
-                    double fQuadrato = results[0] * results[0];
+                    Console.WriteLine("Inserisci la potenza a cui vuoi elevare");
+                    double dPotenza = Convert.ToDouble(Console.ReadLine());
 
-                    Console.WriteLine("Il quadrato di {0} = {1}", results[0], fQuadrato);
+                    double dRisultatoPotenza = Math.Pow(results[0], dPotenza);
+                    Console.WriteLine("{0} elevato alla {1} da {2}", results[0], dPotenza, dRisultatoPotenza);
+
                 
                 }
                 else if (iChoise == 5)
                 {
+                    
                     double dSomma = 0;
                     results = new double[10];
                     for (int i = 0; i < results.Length; i++)
@@ -98,6 +102,7 @@ namespace esercizio2
            
                     double dAverage = dSomma / results.Length;
                     Console.WriteLine("la media dei numeri precedentemente inseriti é: {0}", dAverage);
+                    
                 }
                 else if(iChoise == 9)
                 {
