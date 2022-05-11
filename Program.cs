@@ -18,18 +18,15 @@ namespace esercizio2
             while(!finito)
             {
                 Console.WriteLine("Sceglirer l'operazione da eseguire");
-                Console.WriteLine("0-somma 1-prodotto 2-divisione 3-sottrazione 4-potenza 5-media 9-esci dal programma");
+                Console.WriteLine("0-somma 1-prodotto 2-divisione 3-sottrazione 4-potenza 5-media 6-min/max 9-esci dal programma");
                 int iChoise = Convert.ToInt32(Console.ReadLine());
                 double[] results;
             
                 if(iChoise == 0)
                 {
                     results = new double[2];
-                    for(int i=0; i < results.Length; i++)
-                    {
-                        Console.WriteLine("inserisci numero:");
-                        results[i] = Convert.ToDouble(Console.ReadLine());
-                    };
+                   
+                    metodi.PopolamentoArray(ref results);
                     double fSomma = results[0] + results[1];
                 
                     Console.WriteLine("Risultato: {0} + {1} = {2}", results[0], results[1], fSomma);
@@ -37,11 +34,8 @@ namespace esercizio2
                 else if(iChoise == 1)
                 {
                     results = new double[2];
-                    for (int i = 0; i < results.Length; i++)
-                    {
-                        Console.WriteLine("inserisci numero:");
-                        results[i] = Convert.ToDouble(Console.ReadLine());
-                    };
+                    
+                    metodi.PopolamentoArray(ref results);
                     double fProdotto = results[0] * results[1];
 
                     Console.WriteLine("Risultato: {0} + {1} = {2}", results[0], results[1], fProdotto);
@@ -49,11 +43,8 @@ namespace esercizio2
                 else if (iChoise == 2)
                 {
                     results = new double[2];
-                    for (int i = 0; i < results.Length; i++)
-                    {
-                        Console.WriteLine("inserisci numero:");
-                        results[i] = Convert.ToDouble(Console.ReadLine());
-                    };
+                    
+                    metodi.PopolamentoArray(ref results);
                     double fDivisone = results[0] / results[1];
 
                     Console.WriteLine("Risultato: {0} x {1} = {2}", results[0], results[1], fDivisone);
@@ -61,11 +52,8 @@ namespace esercizio2
                 else if (iChoise == 3)
                 {
                     results = new double[2];
-                    for (int i = 0; i < results.Length; i++)
-                    {
-                        Console.WriteLine("inserisci numero:");
-                        results[i] = Convert.ToDouble(Console.ReadLine());
-                    };
+                    
+                    metodi.PopolamentoArray(ref results);
                     double fSottrazione = results[0] - results[1];
 
                     Console.WriteLine("Risultato: {0} - {1} = {2}", results[0], results[1], fSottrazione);
@@ -89,11 +77,8 @@ namespace esercizio2
                     
                     double dSomma = 0;
                     results = new double[10];
-                    for (int i = 0; i < results.Length; i++)
-                    {
-                        Console.WriteLine("inserisci numero:");
-                        results[i] = Convert.ToDouble(Console.ReadLine());
-                    };
+                    
+                    metodi.PopolamentoArray(ref results);
 
                     foreach (double element in results)
                     {
@@ -103,6 +88,20 @@ namespace esercizio2
                     double dAverage = dSomma / results.Length;
                     Console.WriteLine("la media dei numeri precedentemente inseriti é: {0}", dAverage);
                     
+                }
+                else if(iChoise == 6)
+                {
+                    Console.WriteLine("quanti numeri vuoi inserire?");
+                    int dArrayLength = Convert.ToInt32(Console.ReadLine());
+                    results = new double[dArrayLength];
+
+                   
+                    metodi.PopolamentoArray(ref results);
+
+                    double maxValue = results.Max();
+                    double minValue = results.Min();
+
+                    Console.WriteLine("il numero minimo é: {0} il numero massimo é: {1}", minValue, maxValue);
                 }
                 else if(iChoise == 9)
                 {
